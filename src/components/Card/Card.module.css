@@ -1,0 +1,29 @@
+.Card {
+    box-sizing: border-box;
+    margin: 10px auto;
+    width: 100px;
+    height: 190px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.diamond,
+.trefl {
+    width: 40px;
+    height: 40px;
+}
+
+.diamond {
+    transform: rotate(45deg);
+    background-color: #f00;
+}
+
+.trefl {
+    /* background-color: #000; */
+    /* color: white; */
+}
