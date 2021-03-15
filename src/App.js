@@ -81,13 +81,17 @@ function App() {
     return sum;
   };
   const compareScores = () => {
-    if (userInfo.current.innerHTML > computerInfo.current.innerHTML) {
-      // console.log(s);
-      score.current.innerHTML = `Gracz wygrał, Komputer miał: ${computerInfo.current.innerHTML}, a Gracz: ${userInfo.current.innerHTML}`;
-    } else if (userInfo.current.innerHTML < computerInfo.current.innerHTML) {
-      score.current.innerHTML = "Komputer wygrał";
+    if (computerInfo.current.innerHTML !== "tooMuch") {
+      if (userInfo.current.innerHTML > computerInfo.current.innerHTML) {
+        // console.log(s);
+        score.current.innerHTML = `Gracz wygrał, Komputer miał: ${computerInfo.current.innerHTML}, a Gracz: ${userInfo.current.innerHTML}`;
+      } else if (userInfo.current.innerHTML < computerInfo.current.innerHTML) {
+        score.current.innerHTML = "Komputer wygrał";
+      } else {
+        score.current.innerHTML = "Remis";
+      }
     } else {
-      score.current.innerHTML = "Remis";
+      score.current.innerHTML = "Gracz wygrał";
     }
   };
 
@@ -194,6 +198,9 @@ function App() {
   // useEffect(() => {
   //   ComputerTurn(); // This is be executed when `loading` state changes
   // }, [computerCards]);
+  useEffect(() => {
+    showCardForUser();
+  }, []);
   return (
     <>
       <div className="App">{}</div>
